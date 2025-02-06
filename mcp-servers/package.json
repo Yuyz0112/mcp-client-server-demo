@@ -1,0 +1,39 @@
+{
+  "name": "mcp-servers",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.4.0",
+    "@supabase/supabase-js": "^2.47.10",
+    "express": "^4.21.2",
+    "pdfjs-serverless": "^0.6.0",
+    "pocketbase": "^0.24.0",
+    "zod": "^3.24.1",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "~5.6.2"
+  },
+  "tsup": {
+    "entry": [
+      "koala-news-server.ts"
+    ],
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "noExternal": [
+      "@modelcontextprotocol",
+      "pocketbase",
+      "zod",
+      "zod-to-json-schema",
+      "express",
+      "@supabase/supabase-js"
+    ]
+  }
+}
